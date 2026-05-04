@@ -14,8 +14,10 @@ venv/
 dev.db
 *.db
 
-# Storage
-storage/
+# Storage (runtime upload dir, not source packages)
+/storage/
+apps/api/storage/
+!apps/api/src/adas_api/storage/
 
 # Node
 node_modules/
