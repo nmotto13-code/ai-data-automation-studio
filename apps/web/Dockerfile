@@ -1,15 +1,13 @@
 FROM node:20-alpine AS deps
 WORKDIR /app
-RUN npm install -g pnpm
 COPY package.json ./
-RUN pnpm install --frozen-lockfile
+RUN npm install
 
 FROM node:20-alpine AS builder
 WORKDIR /app
-RUN npm install -g pnpm
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-RUN pnpm build
+RUN npm run build
 
 FROM node:20-alpine AS runner
 WORKDIR /app
