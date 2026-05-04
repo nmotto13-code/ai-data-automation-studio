@@ -11,10 +11,8 @@ RUN uv pip install --no-cache /app/packages/engine
 
 # Install API dependencies
 COPY pyproject.toml /app/pyproject.toml
-RUN uv pip install --no-cache -e .
-
-# Copy application source
 COPY src /app/src
+RUN uv pip install --no-cache -e .
 COPY alembic /app/alembic
 COPY alembic.ini /app/alembic.ini
 
