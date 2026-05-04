@@ -1,7 +1,4 @@
-[build]
-builder = "DOCKERFILE"
-
-[deploy]
-healthcheckPath = "/health"
-healthcheckTimeout = 300
-restartPolicyType = "ON_FAILURE"
+# This file is intentionally minimal.
+# The API service is configured in apps/api/railway.toml.
+# In Railway dashboard, set Root Directory = apps/api for the API service.
+# In Railway dashboard, set Root Directory = apps/web for the web service.
