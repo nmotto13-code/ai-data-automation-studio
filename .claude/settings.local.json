@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "PowerShell(gh *)"
+      "PowerShell(gh *)",
+      "PowerShell(gh auth *)"
     ]
   }
 }
