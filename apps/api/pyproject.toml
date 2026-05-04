@@ -18,7 +18,7 @@ dependencies = [
 ]
 
 [tool.uv.sources]
-adas-engine = { workspace = true }
+adas-engine = { path = "packages/engine", editable = true }
 
 [build-system]
 requires = ["hatchling"]
