@@ -1,20 +1,8 @@
 [build]
-builder = "dockerfile"
+builder = "DOCKERFILE"
+dockerfilePath = "apps/api/Dockerfile"
 
-[[services]]
-name = "api"
-source = "."
-dockerfile = "apps/api/Dockerfile"
-
-[services.deploy]
+[deploy]
 healthcheckPath = "/health"
-healthcheckTimeout = 30
-restartPolicyType = "on_failure"
-
-[[services]]
-name = "web"
-source = "."
-dockerfile = "apps/web/Dockerfile"
-
-[services.deploy]
-restartPolicyType = "on_failure"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"
